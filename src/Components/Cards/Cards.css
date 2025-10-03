@@ -1,0 +1,16 @@
+.card-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.MuiCard-root:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card-description {
+    color: #b0b0b0;
+}
