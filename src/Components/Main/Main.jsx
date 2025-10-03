@@ -10,7 +10,7 @@ function Main() {
     useEffect(() => {
 
         // fetch("/api/api/v1/characters?limit=45")
-        fetch("/api/characters")
+        fetch("/api/characters?limit=45")
             .then((res) => res.json())
             .then((data) => setCharacters(data.content))
             .catch((err) => console.error("Fetch error:", err))
