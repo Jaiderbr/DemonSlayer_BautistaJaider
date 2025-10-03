@@ -12,7 +12,9 @@ function CharacterDetail() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`/api/api/v1/characters?id=${id}`)
+
+        // fetch(`/api/api/v1/characters?id=${id}`)
+        fetch(`/api/characters?id=${id}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.content && data.content.length > 0) setCharacter(data.content[0]);
