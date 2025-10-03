@@ -9,8 +9,8 @@ function Main() {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
 
-        // fetch("/api/api/v1/characters?limit=45")
-        fetch("https://demonslayerapi.com/api/v1/characters?limit=45")
+        // fetch("/api/api/v1/characters?limit=45")        
+        fetch("https://www.demonslayer-api.com/api/v1/characters?limit=45")
             .then((res) => res.json())
             .then((data) => setCharacters(data.content))
             .catch((err) => console.error("Fetch error:", err))
