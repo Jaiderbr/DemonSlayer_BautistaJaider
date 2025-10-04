@@ -11,10 +11,7 @@ import CardActions from '@mui/material/CardActions';
 
 import { Link } from "react-router-dom";
 import './Cards.css'
-
-
-
-
+import noImg from '../../assets/noImg.jpg';
 
 
 
@@ -36,8 +33,8 @@ const MultiActionAreaCard = ({ character }) => {
                 <CardMedia
                     component="img"
                     height="300"
-                    image={character.img}
-                    alt={character.name}
+                    image={character.img ? character.img : noImg}
+                    alt={character.name ? character.name : "unknown"}
 
                     sx={{
                         width: "100%",
@@ -48,7 +45,7 @@ const MultiActionAreaCard = ({ character }) => {
                             backgroundColor: "#ff1744",
                             boxShadow: "0 6px 16px rgba(0, 0, 0, 0.5)",
                             transform: "scale(1.05)",
-                            transition: "transform 0.3s ease-in-out",                            
+                            transition: "transform 0.3s ease-in-out",
                         },
                     }}
                 />
@@ -59,7 +56,7 @@ const MultiActionAreaCard = ({ character }) => {
                         component="div"
                         sx={{ color: "#E53935", fontWeight: "bold" }}
                     >
-                        {character.name}
+                        {character.name ? character.name : "unknown"}
                     </Typography>
                     <Typography
                         variant="body2"
@@ -67,7 +64,7 @@ const MultiActionAreaCard = ({ character }) => {
                         className="card-description"
                     >
                         <div className="card-description">
-                            “{character.quote}”
+                            “{character.quote ? character.quote : "unknown"}”
                         </div>
 
                     </Typography>

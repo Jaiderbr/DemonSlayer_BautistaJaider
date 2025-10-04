@@ -16,7 +16,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import IconButton from '@mui/material/IconButton';
 
 import Stack from '@mui/material/Stack';
-const noImg = "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg";
+import noImg from '../../assets/noImg.jpg';
 
 
 const IconButtons = ({ icon, onClick }) => {
@@ -66,8 +66,8 @@ const CardsDetail = ({ character }) => {
             >
                 <CardMedia
                     component="img"
-                    image={character.img}
-                    alt={character.name}
+                    image={character.img ? character.img : noImg}
+                    alt={character.name ? character.name : "unknown"}
                     sx={{
                         width: { xs: "100%", md: 350 },
                         objectPosition: "top",
@@ -89,35 +89,34 @@ const CardsDetail = ({ character }) => {
                         variant="h4"
                         sx={{ color: "#E53935", fontWeight: "bold" }}
                     >
-                        {character.name}
+                        {character.name ? character.name : "unknown"}
                     </Typography>
 
                     <Typography
                         variant="body1"
                         sx={{ color: "#E0E0E0", marginBottom: "16px" }}
                     >
-                        {character.description}
+                        {character.description ? character.description : "unknown"}
                     </Typography>
 
                     <Typography variant="body2" sx={{ color: "#B0BEC5" }}>
-                        <strong>Edad:</strong> {character.age}
+                        <strong>Edad:</strong> {character.age ? character.age : "unknown"}
                     </Typography>
                     <Typography variant="body2" sx={{ color: "#B0BEC5" }}>
-                        <strong>Género:</strong> {character.gender}
+                        <strong>Género:</strong> {character.gender ? character.gender : "unknown"}
                     </Typography>
                     <Typography variant="body2" sx={{ color: "#B0BEC5" }}>
-                        <strong>Raza:</strong> {character.race}
+                        <strong>Raza:</strong> {character.race ? character.race : "unknown"}
                     </Typography>
                     <Typography variant="body2" sx={{ color: "#B0BEC5" }}>
-                        <strong>Afiliación:</strong> {character.affiliation?.name}
+                        <strong>Afiliación:</strong> {character.affiliation?.name ? character.affiliation.name : "unknown"}
                     </Typography>
 
                     <blockquote style={{ color: "#FFCDD2", marginTop: "20px" }}>
-                        "{character.quote}"
+                        "{character.quote ? character.quote : "unknown"}"
                     </blockquote>
                 </CardContent>
             </Card>
-
 
 
 
@@ -150,8 +149,8 @@ const CardsDetail = ({ character }) => {
                     }}>
                         <CardMedia
                             component="img"
-                            image={character?.combat_style?.[contImages]?.img ?? noImg}
-                            alt={character?.name ?? "Default Image"}
+                            image={character?.combat_style?.[contImages]?.img ? character?.combat_style?.[contImages]?.img : noImg}
+                            alt={character?.name ?? "character.quote "}
                             sx={{
                                 width: "100%",
                                 height: 250,
